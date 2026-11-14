@@ -2,14 +2,16 @@
 
 ## Repository
 
-- **GitHub repository:** [ianjam658/team-website](https://github.com/ianjam658/team-website)
-- **Default branch:** `main`
-- **Website source folder:** `team-website/`
-- **Development environment:** Kali Linux
+- GitHub repository: https://github.com/ianjam658/team-website
+- Branch: `main`
+- Operating system used: Kali Linux
+- Project folder: `team-website/`
 
-## What the repository contains
+## Project summary
 
-The website is organized into HTML pages, CSS styling, and JavaScript behavior:
+This assignment was to create a basic team website using HTML, CSS, and JavaScript, push it to GitHub, and document the work. We created the repository, added the website files, changed the sample text to reflect our own names and information, and created a ZIP archive of the finished project.
+
+The website files contain the layout, styling, and script behavior for the pages:
 
 ```text
 team-website/
@@ -18,53 +20,98 @@ team-website/
 ├── contact.html
 ├── css/
 │   └── styles.css
-└── js/
-    └── script.js
+├── js/
+│   └── script.js
+├── create_zip.py
+├── ASSIGNMENT.md
+└── team-website.zip
 ```
 
-The repository also includes `create_zip.py`, a helper script for packaging the project, and this work-log document.
+## What we changed on the site
 
-## What we did
+We updated the placeholder names and content to match our own team information.
 
-1. Created the `team-website` GitHub repository.
-2. Added the website files: home, projects, and contact pages, stylesheet, and JavaScript file.
-3. Updated the names displayed on the site to our names. The team section on the home page shows **Ian Wafula** and **Evance Ochieng**; the site branding is **Team Byte**.
-4. Added a Python helper to create a ZIP archive and this document describing the work and terminal workflow.
+- Home page team section includes: **Ian Wafula** and **Evance Ochieng**
+- The site uses the label **Team Byte** as the project brand
+- The content was customized to describe our team and the assignment work
 
-## Working from a Kali Linux terminal
+This was done directly in the HTML files so the website displayed our names instead of the original sample text.
 
-The commands below show how to download the project, create its ZIP archive, and upload later edits. They assume Git and Python 3 are installed.
+## What we did from the terminal
 
-### Clone the repository
+The following commands show the workflow we used on Kali Linux to set up the project, add files, and upload them to GitHub.
+
+### 1. Create the project folder
 
 ```bash
-git clone https://github.com/ianjam658/team-website.git
+mkdir team-website
 cd team-website
 ```
 
-### Create the ZIP archive
+### 2. Initialize Git
 
-Run this from the repository's top-level folder:
+```bash
+git init
+git branch -M main
+```
+
+### 3. Add the website files
+
+After creating or editing the HTML, CSS, and JavaScript files, stage them:
+
+```bash
+git add .
+```
+
+### 4. Commit the project
+
+```bash
+git commit -m "Initial team website commit"
+```
+
+### 5. Connect to GitHub
+
+```bash
+git remote add origin https://github.com/ianjam658/team-website.git
+```
+
+### 6. Push to GitHub
+
+```bash
+git push -u origin main
+```
+
+### 7. Create a ZIP archive
+
+From the project root, run:
 
 ```bash
 python3 create_zip.py
 ```
 
-This creates `team-website.zip` in the top-level folder. It includes the project and documentation, but excludes Git's internal `.git` directory and the generated archive itself. Run the command again whenever you want a fresh ZIP after making changes.
+This creates a ZIP file named `team-website.zip` in the project directory. The helper script excludes the `.git` folder and the ZIP itself so the archive contains only project files.
 
-### Save and upload edits
+## ZIP generation script
 
-After editing or adding files, use these commands from the repository folder:
+The repository includes a Python script named `create_zip.py` that builds the archive. It scans the project folder, includes all files except `.git` and the archive being created, and writes them into a ZIP file.
+
+Example:
 
 ```bash
-git status
-git add .
-git commit -m "Update team website"
-git push origin main
+python3 create_zip.py
+ls -l
 ```
 
-`git status` lets you review changes before staging them. The commit records changes locally, and `git push` uploads them to GitHub. GitHub may ask you to authenticate.
+This verifies that the ZIP was created successfully.
 
-## Downloading a ZIP from GitHub
+## Final assignment notes
 
-GitHub also provides a ZIP of the committed source: open the repository page, choose **Code**, then **Download ZIP**. The terminal script is useful for creating a fresh archive from your local working copy.
+The completed work includes:
+
+- GitHub repository created
+- Team website files added
+- Names changed to ours
+- Project archived as a ZIP file
+- Assignment documentation created
+
+This assignment was completed in Kali Linux using the terminal for version control and archive creation, and the final project was uploaded to GitHub.
