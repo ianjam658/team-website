@@ -5,6 +5,7 @@
 - **GitHub repository:** [ianjam658/team-website](https://github.com/ianjam658/team-website)
 - **Default branch:** `main`
 - **Website source folder:** `team-website/`
+- **Development environment:** Kali Linux
 
 ## What the repository contains
 
@@ -21,18 +22,18 @@ team-website/
     └── script.js
 ```
 
-The repository also includes `create_zip.py`, which creates a ZIP of the project, and this work-log document.
+The repository also includes `create_zip.py`, a helper script for packaging the project, and this work-log document.
 
 ## What we did
 
 1. Created the `team-website` GitHub repository.
-2. Added the website files to the repository: the home, projects, and contact pages, stylesheet, and JavaScript file.
-3. Added a Python helper to package the repository files into a ZIP archive.
-4. Added this document describing the project and the terminal commands for working with it.
+2. Added the website files: home, projects, and contact pages, stylesheet, and JavaScript file.
+3. Updated the names displayed on the site to our names. The team section on the home page shows **Ian Wafula** and **Evance Ochieng**; the site branding is **Team Byte**.
+4. Added a Python helper to create a ZIP archive and this document describing the work and terminal workflow.
 
-## Working with the repository from a terminal
+## Working from a Kali Linux terminal
 
-The following commands show how to download the project, create the ZIP, and send any changes back to GitHub. They are instructions for reproducing the workflow; run them in a terminal with Git and Python 3 installed.
+The commands below show how to download the project, create its ZIP archive, and upload later edits. They assume Git and Python 3 are installed.
 
 ### Clone the repository
 
@@ -43,17 +44,13 @@ cd team-website
 
 ### Create the ZIP archive
 
+Run this from the repository's top-level folder:
+
 ```bash
 python3 create_zip.py
 ```
 
-On Windows, if `python3` is not recognized, try:
-
-```powershell
-py create_zip.py
-```
-
-The script creates `team-website.zip` in the repository's top-level folder. It includes the project and documentation, but excludes Git's internal `.git` directory and the generated archive itself.
+This creates `team-website.zip` in the top-level folder. It includes the project and documentation, but excludes Git's internal `.git` directory and the generated archive itself. Run the command again whenever you want a fresh ZIP after making changes.
 
 ### Save and upload edits
 
@@ -66,8 +63,8 @@ git commit -m "Update team website"
 git push origin main
 ```
 
-`git status` lets you review the changes before staging them. The commit command records the changes locally, and `git push` uploads them to GitHub. GitHub may ask you to authenticate.
+`git status` lets you review changes before staging them. The commit records changes locally, and `git push` uploads them to GitHub. GitHub may ask you to authenticate.
 
 ## Downloading a ZIP from GitHub
 
-GitHub also provides a ZIP of the committed source: open the repository page, choose **Code**, then **Download ZIP**. The terminal script above is useful when you want to make a fresh ZIP after local changes.
+GitHub also provides a ZIP of the committed source: open the repository page, choose **Code**, then **Download ZIP**. The terminal script is useful for creating a fresh archive from your local working copy.
